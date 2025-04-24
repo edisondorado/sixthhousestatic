@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
 const ChatsSchema = mongoose.model("Bridge-Chats", new mongoose.Schema({
-  id: String,
+  telId: String,
+  discId: String,
   name: String,
+  webhook: String,
   messages: [{
-    id: String,
-    sender: String,
-    text: String,
+    tgId: String,
+    discId: String,
     date: Date,
   }],
 }));

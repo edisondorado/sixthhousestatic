@@ -4,8 +4,8 @@ const messageCreate = require('./messageCreate');
 
 const ready = async () => {
     const telegramBot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
-    const discordClient = new Client({ intents: [GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.Guilds], partials: ['CHANNEL'] });
-    
+    const discordClient = new Client({ intents: [GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages, GatewayIntentBits.Guilds], partials: ['CHANNEL'] });
+
     // Telegram -> Discord
     telegramBot.on('message', async (ctx) => {
         messageCreate(ctx, telegramBot, 1, discordClient);
