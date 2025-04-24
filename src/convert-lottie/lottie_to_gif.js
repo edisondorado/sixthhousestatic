@@ -9,6 +9,10 @@ const WIDTH = 512;
 const HEIGHT = 512;
 
 async function convertLottieToGif(jsonUrl, outputPath) {
+    if (await fs.pathExists(outputPath)) {
+        console.log("⚠️ GIF уже существует:", outputPath);
+        return true;
+    }
     const json = (await axios.get(jsonUrl)).data;
 
     await fs.ensureDir(path.dirname(outputPath));
