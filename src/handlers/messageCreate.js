@@ -420,7 +420,7 @@ async function sendGifToTelegram(bot, chatId, filePath, caption) {
 }
 
 function getAvatarUrl(userId) {
-    return `https://ui-avatars.com/api/?name=${userId}&background=random&size=128`;
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(userId)}&background=random&size=128`;
 }
 
 module.exports = messageCreate;
