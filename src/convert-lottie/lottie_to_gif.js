@@ -11,6 +11,8 @@ const HEIGHT = 512;
 async function convertLottieToGif(jsonUrl, outputPath) {
     const json = (await axios.get(jsonUrl)).data;
 
+    await fs.ensureDir(path.dirname(outputPath));
+
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
