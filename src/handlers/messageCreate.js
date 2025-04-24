@@ -7,7 +7,7 @@ const path = require('path');
 const mime = require('mime-types');
 const ffmpegInstaller = require('@ffmpeg-installer/ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegInstaller.path);
-const { ChatsSchema } = require("../models/Schemas");
+const { ChatsSchema } = require("../models/schemas");
 const { convertLottieToGif } = require("../convert-lottie/lottie_to_gif");
 const { Input } = require("telegraf");
 
